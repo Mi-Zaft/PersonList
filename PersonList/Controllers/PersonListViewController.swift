@@ -17,22 +17,24 @@ class PersonListViewController: UITableViewController {
         persons = Person.getPersons()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let personDetailVC = segue.destination as? PersonDetailViewController else { return }
-//        let indexPath = tableView.indexPathForSelectedRow!
-//        
-//        personDetailVC.phone = persons[indexPath.row].phone
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let personDetailVC = segue.destination as? PersonDetailViewController else { return }
+        let indexPath = tableView.indexPathForSelectedRow!
+        let person = persons[indexPath.row]
+        
+        personDetailVC.person = person
+        personDetailVC.navigationItem.title = "\(person.name) \(person.surname)"
+    }
 }
 
 // MARK: - Table View Data Source
 extension PersonListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        persons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "person", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
         let person = persons[indexPath.row]
