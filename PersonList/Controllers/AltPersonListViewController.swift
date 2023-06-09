@@ -54,7 +54,7 @@ extension AltPersonListViewController {
             var content = cell.defaultContentConfiguration()
             
             content.image = UIImage(systemName: "phone")
-            content.text = persons[indexPath.row].phone
+            content.text = persons[indexPath.section].phone
             
             cell.contentConfiguration = content
             return cell
@@ -63,7 +63,7 @@ extension AltPersonListViewController {
             var content = cell.defaultContentConfiguration()
             
             content.image = UIImage(systemName: "tray")
-            content.text = persons[indexPath.row].email
+            content.text = persons[indexPath.section].email
             
             cell.contentConfiguration = content
             return cell
