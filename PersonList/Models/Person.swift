@@ -13,36 +13,43 @@ struct Person {
     let phone: String
     let email: String
     
-    static func getPersons() -> [Person] {
+    var fullName: String {
+        "\(name) \(surname)"
+    }
+}
+
+extension Person {
+    static func getContactList() -> [Person] {
         
         var persons: [Person] = []
+        let names = DataStore.shared.names.shuffled()
+        let surnames = DataStore.shared.surnames.shuffled()
+        let phones = DataStore.shared.phones.shuffled()
+        let emails = DataStore.shared.emails.shuffled()
         
-        var names = Data­Manager.names
-        var surnames = Data­Manager.surnames
-        var phones = Data­Manager.phones
-        var emails = Data­Manager.emails
+        let iterationCount = min(
+            names.count,
+            surnames.count,
+            emails.count,
+            phones.count
+        )
         
-        while persons.count < Data­Manager.names.count {
-            let randomName: String = names.randomElement()!
-            let randomSurname: String = surnames.randomElement()!
-            let randomNumber: String = phones.randomElement()!
-            let randomEmail: String = emails.randomElement()!
-            
+        for index in 0..<iterationCount {
             let person = Person(
-                name: randomName,
-                surname: randomSurname,
-                phone: randomNumber,
-                email: randomEmail
+                name: names[index],
+                surname: surnames[index],
+                phone: phones[index],
+                email: emails[index]
             )
             
             persons.append(person)
-           
-            names.remove(at: names.firstIndex(of: randomName)!)
-            surnames.remove(at: surnames.firstIndex(of: randomSurname)!)
-            phones.remove(at: phones.firstIndex(of: randomNumber)!)
-            emails.remove(at: emails.firstIndex(of: randomEmail)!)
         }
         
         return persons
     }
+}
+
+enum Contacts: String {
+    case phone = "phone"
+    case email = "tray"
 }

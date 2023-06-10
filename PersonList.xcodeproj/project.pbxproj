@@ -14,8 +14,9 @@
 		940878E12A30FE7200CB1F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 940878E02A30FE7200CB1F88 /* Assets.xcassets */; };
 		940878E42A30FE7200CB1F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 940878E22A30FE7200CB1F88 /* LaunchScreen.storyboard */; };
 		940878F02A3107B700CB1F88 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940878EF2A3107B700CB1F88 /* Person.swift */; };
-		940878F32A31095500CB1F88 /* Data­Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940878F22A31095500CB1F88 /* Data­Manager.swift */; };
+		940878F32A31095500CB1F88 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940878F22A31095500CB1F88 /* DataStore.swift */; };
 		949F44452A33982B00F8373C /* AltPersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F44442A33982B00F8373C /* AltPersonListViewController.swift */; };
+		949F44482A349AB600F8373C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F44472A349AB600F8373C /* TabBarViewController.swift */; };
 		94ABC6982A328E2900443A88 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ABC6972A328E2900443A88 /* PersonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +30,9 @@
 		940878E32A30FE7200CB1F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		940878E52A30FE7200CB1F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		940878EF2A3107B700CB1F88 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		940878F22A31095500CB1F88 /* Data­Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data­Manager.swift"; sourceTree = "<group>"; };
+		940878F22A31095500CB1F88 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		949F44442A33982B00F8373C /* AltPersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltPersonListViewController.swift; sourceTree = "<group>"; };
+		949F44472A349AB600F8373C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		94ABC6972A328E2900443A88 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,10 +66,10 @@
 		940878D62A30FE7000CB1F88 /* PersonList */ = {
 			isa = PBXGroup;
 			children = (
+				949F44462A347F4300F8373C /* ViewControllers */,
 				940878F12A31094A00CB1F88 /* Services */,
 				940878EE2A3107A800CB1F88 /* Models */,
 				940878EC2A3102FB00CB1F88 /* App */,
-				94ABC6962A328E1100443A88 /* Controllers */,
 				940878EB2A3102E400CB1F88 /* Storyboards */,
 				940878ED2A31030400CB1F88 /* Resources */,
 			);
@@ -112,19 +114,20 @@
 		940878F12A31094A00CB1F88 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				940878F22A31095500CB1F88 /* Data­Manager.swift */,
+				940878F22A31095500CB1F88 /* DataStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		94ABC6962A328E1100443A88 /* Controllers */ = {
+		949F44462A347F4300F8373C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				940878DB2A30FE7000CB1F88 /* PersonListViewController.swift */,
 				94ABC6972A328E2900443A88 /* PersonDetailViewController.swift */,
 				949F44442A33982B00F8373C /* AltPersonListViewController.swift */,
+				949F44472A349AB600F8373C /* TabBarViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				940878F32A31095500CB1F88 /* Data­Manager.swift in Sources */,
+				949F44482A349AB600F8373C /* TabBarViewController.swift in Sources */,
+				940878F32A31095500CB1F88 /* DataStore.swift in Sources */,
 				940878DC2A30FE7000CB1F88 /* PersonListViewController.swift in Sources */,
 				94ABC6982A328E2900443A88 /* PersonDetailViewController.swift in Sources */,
 				940878D82A30FE7000CB1F88 /* AppDelegate.swift in Sources */,
